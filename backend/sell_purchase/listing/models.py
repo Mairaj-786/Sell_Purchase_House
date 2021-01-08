@@ -5,8 +5,8 @@ from realtor.models import Realtor
 
 class Listing(models.Model):
     class SalesType(models.TextChoices):
-        For_Sale = "For Sale"
-        For_Rent = "For Rent"
+        FOR_SALE = "For Sale"
+        FOR_RENT = "For Rent"
 
     class HouseType(models.TextChoices):
         House = "House"
@@ -22,7 +22,7 @@ class Listing(models.Model):
     zipcode = models.CharField(max_length=15)
     desc = models.TextField(blank=True)
     sale_type = models.CharField(
-        max_length=30, choices=SalesType.choices, default=SalesType.For_Sale)
+        max_length=30, choices=SalesType.choices, default=SalesType.FOR_SALE)
     price = models.IntegerField()
     bedrooms = models.IntegerField()
     bathrooms = models.DecimalField(max_digits=2, decimal_places=1)
